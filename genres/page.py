@@ -1,4 +1,6 @@
+import pandas as pd
 import streamlit as st
+from st_aggrid import AgGrid
 
 
 genres = [
@@ -20,7 +22,11 @@ def show_genres_page():
     
     st.write('Genres List')
 
-    st.table(genres)
+    AgGrid(
+        data = pd.DataFrame(genres),
+        key = 'genres_grid',
+        fit_columns_on_grid_load = True,
+    )
     
     st.divider()
     
