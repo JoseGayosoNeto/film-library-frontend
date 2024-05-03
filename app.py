@@ -18,7 +18,8 @@ def main():
         )
         
         if menu_option == 'Home':
-            st.write('Home')
+            from home.page import show_home_page
+            show_home_page()
             
         elif menu_option == 'Genres':
             from genres.page import show_genres_page
